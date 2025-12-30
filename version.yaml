@@ -1,0 +1,2 @@
+version:
+    current: { major: 2025, minor: 12, patch: 2, format: '$major.$minor.$patch - $git_hash' }
