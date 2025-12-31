@@ -36,6 +36,7 @@ class TeamMember extends Model
             Cache::forget('team_members.all');
             Cache::rememberForever('team_members.all', static function () {
                 return TeamMember::query()
+                    ->orderBy('surname')->orderBy('name')
                     ->get();
             });
         });
@@ -44,6 +45,7 @@ class TeamMember extends Model
             Cache::forget('team_members.all');
             Cache::rememberForever('team_members.all', static function () {
                 return TeamMember::query()
+                    ->orderBy('surname')->orderBy('name')
                     ->get();
             });
         });
