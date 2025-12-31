@@ -10,6 +10,7 @@ use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
+use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 
 class TeamMemberForm
@@ -26,7 +27,11 @@ class TeamMemberForm
                                     ->label(__('global.team_members.form.photo'))
                                     ->avatar()
                                     ->disk('public')
-                                    ->visibility('public'),
+                                    ->visibility('public')
+                                    ->getUploadedFileNameForStorageUsing(
+                                        fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
+                                            ->prepend('team-member-'),
+                                    ),
                                 TextInput::make('title_before')
                                     ->label(__('global.team_members.form.title_before'))
                                     ->maxLength(254),

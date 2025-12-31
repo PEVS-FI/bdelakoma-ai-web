@@ -21,7 +21,6 @@ class TeamMemberSeeder extends Seeder
                 'annotation_en' => null,
                 'skills_sk' => null,
                 'skills_en' => null,
-                'photo_source' => 'jan_lacko.jpg',
             ],
             [
                 'title_before' => null,
@@ -32,7 +31,6 @@ class TeamMemberSeeder extends Seeder
                 'annotation_en' => null,
                 'skills_sk' => null,
                 'skills_en' => null,
-                'photo_source' => 'oskar_freso.jpg',
             ],
             [
                 'title_before' => 'Ing. Bc.',
@@ -43,20 +41,10 @@ class TeamMemberSeeder extends Seeder
                 'annotation_en' => null,
                 'skills_sk' => null,
                 'skills_en' => null,
-                'photo_source' => 'pavol_freso.jpg',
             ],
         ];
 
         foreach ($members as $memberData) {
-            $photoPath = null;
-            $sourcePath = public_path('images/team/' . $memberData['photo_source']);
-
-            if (File::exists($sourcePath)) {
-                $filename = $memberData['photo_source'];
-                Storage::disk('public')->put('team-members/' . $filename, File::get($sourcePath));
-                $photoPath = 'storage/team-members/' . $filename;
-            }
-
             TeamMember::create([
                 'title_before' => $memberData['title_before'],
                 'first_name' => $memberData['first_name'],
@@ -66,7 +54,7 @@ class TeamMemberSeeder extends Seeder
                 'annotation_en' => $memberData['annotation_en'],
                 'skills_sk' => $memberData['skills_sk'],
                 'skills_en' => $memberData['skills_en'],
-                'photo' => $photoPath,
+                'photo' => null,
             ]);
         }
     }
