@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Support\Facades\Cache;
 
-class HomeController extends Controller
+class ContactController extends Controller
 {
     public function __invoke()
     {
-        return view('home', [
-            'locale' => locale(),
+        return view('contact', [
+            'locale' => locale()
         ]);
     }
 }

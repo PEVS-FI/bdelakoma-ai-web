@@ -1,0 +1,43 @@
+@extends('layouts.web')
+
+@section('content')
+    <!-- start of hero -->
+    <section class="wpo-hero-style-3">
+        <div class="wpo-slide-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-lg-7 col-md-6 slide-caption">
+                        <h2 class="wow fadeInLeftSlow" data-wow-delay="0.1s">{{ __('global.home.header') }}</h2>
+                        <span class="wow fadeInUp" data-wow-delay="0.8s">{{ __('global.home.subheader') }}</span>
+                        <div class="wow fadeInUp" data-wow-delay="1.0s">
+                            <a href="{{ localized_route('research') }}" class="theme-btn">{{ __('global.home.more') }}</a>
+                            <a href="{{ localized_route('team') }}" class="theme-btn-s2">{{ __('global.team.header') }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of hero slider -->
+
+
+
+
+    <!-- wpo-client-area start -->
+    <div class="wpo-client-area2">
+        <div class="container">
+            <div class="wpo-client-item">
+                <div style="margin-bottom: 2rem;">
+                    <h2>Partneri</h2>
+                </div>
+                <div class="Gift-carousel owl-carousel">
+                    <a href="https://paneurouni.com" target="_blank"><img src="{{ asset('images/partners/pevs.png') }}" lazy alt="Paneurópska vysoká škola"></a>
+                    <a href="https://www.nadaciatatrabanky.sk" target="_blank"><img src="{{ asset('images/partners/ttb.jpg') }}" lazy alt="Nadácia Tatra Banky"></a>
+                    <a href="https://www.nadaciavub.sk" target="_blank"><img src="{{ asset('images/partners/vub.png') }}" lazy alt="Nádácia VÚB"></a>
+                    <a href="https://sk-nic.sk/pt/fond-sk-nic/" target="_blank"><img src="{{ asset('images/partners/sknic.png') }}" lazy alt="Fond SK-NIC"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- wpo-client-area end -->
+@endsection
