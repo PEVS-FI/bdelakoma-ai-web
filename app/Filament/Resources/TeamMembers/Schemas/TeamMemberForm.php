@@ -28,10 +28,12 @@ class TeamMemberForm
                                     ->avatar()
                                     ->disk('public')
                                     ->visibility('public')
+                                    ->directory('team-members')
                                     ->getUploadedFileNameForStorageUsing(
-                                        fn (TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
+                                        fn(TemporaryUploadedFile $file): string => (string) str($file->getClientOriginalName())
                                             ->prepend('team-member-'),
-                                    ),
+                                    )
+                                    ->storeFileNamesIn('photo'),
                                 TextInput::make('title_before')
                                     ->label(__('global.team_members.form.title_before'))
                                     ->maxLength(254),
