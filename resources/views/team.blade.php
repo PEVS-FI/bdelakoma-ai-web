@@ -43,7 +43,9 @@
                         @if($loop->odd)
                             <div class="col-lg-6 col-md-6">
                                 <div class="about-s2-img">
-                                    <img src="{{ $member->photo }}" alt="{{ $member->first_name }} {{ $member->surname }}">
+                                    @if($member->photo)
+                                        <img src="storage/{{ $member->photo }}" alt="{{ $member->first_name }} {{ $member->surname }}">
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
@@ -65,7 +67,9 @@
                             </div>
                             <div class="col-lg-6 col-md-6">
                                 <div class="about-s2-img">
-                                    <img src="{{ $member->photo }}" alt="{{ $member->first_name }} {{ $member->surname }}">
+                                    @if($member->photo)
+                                        <img src="storage/{{ $member->photo }}" alt="{{ $member->first_name }} {{ $member->surname }}">
+                                    @endif
                                 </div>
                             </div>
                         @endif
