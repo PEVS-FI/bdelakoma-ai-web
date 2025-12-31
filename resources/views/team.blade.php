@@ -38,51 +38,39 @@
     <div class="wpo-about-area-3 section-padding">
         <div class="wpo-about-wrap">
             <div class="container">
-                <div class="row mb-2">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="about-s2-img">
-                            <img src="{{ asset('images/team/oskar_freso.jpg') }}" alt="Oskar Frešo">
-                        </div>
+                @foreach(Cache::get('team_members.all', static fn () => App\Models\TeamMember::query()->orderBy('surname')->orderBy('name')->get()) as $member)
+                    <div class="row mb-2">
+                        @if($loop->odd)
+                            <div class="col-lg-6 col-md-6">
+                                <div class="about-s2-img">
+                                    <img src="{{ 'storage/' . $member->photo }}" alt="{{ $member->first_name }} {{ $member->surname }}">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="wpo-about-text">
+                                    <h2>{{ $member->first_name }} {{ $member->surname }}</h2>
+                                    <p></p>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        @else
+                            <div class="col-lg-6 col-md-6">
+                                <div class="wpo-about-text">
+                                    <h2>{{ $member->first_name }} {{ $member->surname }}</h2>
+                                    <p></p>
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="about-s2-img">
+                                    <img src="{{ 'storage/' . $member->photo }}" alt="{{ $member->first_name }} {{ $member->surname }}">
+                                </div>
+                            </div>
+                        @endif
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="wpo-about-text">
-                            <h2>Oskar Frešo</h2>
-                            <p></p>
-                            <ul>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mb-2">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="wpo-about-text">
-                            <h2>Pavol Frešo</h2>
-                            <p></p>
-                            <ul>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="about-s2-img">
-                            <img src="{{ asset('images/team/pavol_freso.jpg') }}" alt="Pavol Frešo">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="about-s2-img">
-                            <img src="{{ asset('images/team/jan_lacko.jpg') }}" alt="Ján Lacko">
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="wpo-about-text">
-                            <h2>Ján Lacko</h2>
-                            <p></p>
-                            <ul>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

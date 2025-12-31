@@ -34,6 +34,20 @@ return [
                                             Slovensko',
         'faculty' => 'Fakulta informatiky',
     ],
+    'team_members' => [
+        'form' => [
+            'title_before' => 'Titul pred',
+            'first_name' => 'Meno',
+            'surname' => 'Priezvisko',
+            'title_after' => 'Titul za',
+            'annotation' => 'Stručné CV',
+            'skills' => 'Zručnosti',
+            'photo' => 'Fotografia',
+            'basic_info' => 'Základné údaje',
+            'additional_info' => 'Doplnkové informácie',
+            'plural' => 'Členovia tímu'
+        ]
+    ],
     'footer' => [
         'rights' => 'Fakulta informatiky | Paneurópska vysoká škola. Všetky práva vyhradené.',
     ],
