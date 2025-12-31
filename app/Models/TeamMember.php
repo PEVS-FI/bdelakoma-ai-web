@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -26,8 +27,21 @@ class TeamMember extends Model
     protected function casts(): array
     {
         return [
-            'skills' => 'array',
+            'skills_sk' => 'array',
+            'skills_en' => 'array',
         ];
+    }
+
+    public function fullName(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => collect([
+                $this->title_before,
+                $this->first_name,
+                $this->surname,
+                $this->title_after
+            ])->filter()->join(' '),
+        );
     }
 
     protected static function booted(): void
@@ -36,7 +50,7 @@ class TeamMember extends Model
             Cache::forget('team_members.all');
             Cache::rememberForever('team_members.all', static function () {
                 return TeamMember::query()
-                    ->orderBy('surname')->orderBy('name')
+                    ->orderBy('surname')->orderBy('first_name')
                     ->get();
             });
         });
@@ -45,7 +59,7 @@ class TeamMember extends Model
             Cache::forget('team_members.all');
             Cache::rememberForever('team_members.all', static function () {
                 return TeamMember::query()
-                    ->orderBy('surname')->orderBy('name')
+                    ->orderBy('surname')->orderBy('first_name')
                     ->get();
             });
         });

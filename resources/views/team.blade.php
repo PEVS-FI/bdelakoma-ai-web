@@ -38,37 +38,36 @@
     <div class="wpo-about-area-3 section-padding">
         <div class="wpo-about-wrap">
             <div class="container">
-                @foreach(Cache::get('team_members.all', static fn () => App\Models\TeamMember::query()->orderBy('surname')->orderBy('name')->get()) as $member)
+                @foreach(Cache::get('team_members.all', static fn () => App\Models\TeamMember::query()->orderBy('surname')->orderBy('first_name')->get()) as $member)
                     <div class="row mb-2">
                         @if($loop->odd)
                             <div class="col-lg-6 col-md-6">
                                 <div class="about-s2-img">
                                     @if($member->photo)
-                                        <img src="storage/{{ $member->photo }}" alt="{{ $member->first_name }} {{ $member->surname }}">
+                                        <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->full_name }}">
                                     @endif
                                 </div>
                             </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="wpo-about-text">
-                                    <h2>{{ $member->first_name }} {{ $member->surname }}</h2>
-                                    <p></p>
+                        @endif
+                        <div class="col-lg-6 col-md-6">
+                            <div class="wpo-about-text">
+                                <h2>{{ $member->full_name }}</h2>
+                                <p>{!! $member->{'annotation_' . locale()} !!}</p>
+                                @if(!empty($member->{'skills_' . locale()}))
+                                    <p><b>{{ __('global.team_members.web.skills') }}</b></p>
                                     <ul>
+                                    @foreach($member->{'skills_' . locale()} as $skill)
+                                        <li>{{ $skill['name'] }}</li>
+                                    @endforeach
                                     </ul>
-                                </div>
+                                @endif
                             </div>
-                        @else
-                            <div class="col-lg-6 col-md-6">
-                                <div class="wpo-about-text">
-                                    <h2>{{ $member->first_name }} {{ $member->surname }}</h2>
-                                    <p></p>
-                                    <ul>
-                                    </ul>
-                                </div>
-                            </div>
+                        </div>
+                        @if($loop->even)
                             <div class="col-lg-6 col-md-6">
                                 <div class="about-s2-img">
                                     @if($member->photo)
-                                        <img src="storage/{{ $member->photo }}" alt="{{ $member->first_name }} {{ $member->surname }}">
+                                        <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->full_name }}">
                                     @endif
                                 </div>
                             </div>

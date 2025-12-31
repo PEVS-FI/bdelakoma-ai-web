@@ -45,7 +45,11 @@ return [
             'photo' => 'Fotografia',
             'basic_info' => 'Základné údaje',
             'additional_info' => 'Doplnkové informácie',
-            'plural' => 'Členovia tímu'
+            'plural' => 'Členovia tímu',
+            'skill_name' => 'Názov'
+        ],
+        'web' => [
+            'skills' => 'Špecializácia',
         ]
     ],
     'footer' => [

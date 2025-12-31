@@ -3,7 +3,9 @@
 namespace App\Filament\Resources\TeamMembers\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Section;
@@ -54,23 +56,39 @@ class TeamMemberForm
                             ->tabs([
                                 Tab::make(__('global.languages.sk'))
                                     ->schema([
-                                        RichEditor::make('annotation')
+                                        RichEditor::make('annotation_sk')
                                             ->label(__('global.team_members.form.annotation'))
                                             ->maxLength(65534)
                                             ->extraInputAttributes(['style' => 'min-height: 300px;'])
                                             ->toolbarButtons([
                                                 ['bold', 'italic'],
                                             ]),
+                                        Repeater::make('skills_sk')
+                                            ->label(__('global.team_members.form.skills'))
+                                            ->schema([
+                                                TextInput::make('name')
+                                                    ->maxLength(254)
+                                                    ->label(__('global.team_members.form.skill_name'))
+                                                    ->required(),
+                                            ])
                                     ]),
                                 Tab::make(__('global.languages.en'))
                                     ->schema([
-                                        RichEditor::make('annotation')
+                                        RichEditor::make('annotation_en')
                                             ->label(__('global.team_members.form.annotation'))
                                             ->maxLength(65534)
                                             ->extraInputAttributes(['style' => 'min-height: 300px;'])
                                             ->toolbarButtons([
                                                 ['bold', 'italic'],
                                             ]),
+                                        Repeater::make('skills_en')
+                                            ->label(__('global.team_members.form.skills'))
+                                            ->schema([
+                                                TextInput::make('name')
+                                                    ->label(__('global.team_members.form.skill_name'))
+                                                    ->maxLength(254)
+                                                    ->required(),
+                                            ])
                                     ]),
 
                             ])
