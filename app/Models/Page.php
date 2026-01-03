@@ -6,6 +6,7 @@ use App\Models\Support\Cacheable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Cache;
 
 class Page extends Model
 {
@@ -36,5 +37,28 @@ class Page extends Model
     protected function cacheQuery($query)
     {
         return $query->where('is_active', '=', true);
+    }
+
+    protected static function booted(): void
+    {
+        static::saved(static function () {
+            Cache::forget('pages.global');
+            Cache::rememberForever('pages.global', static function () {
+                return Page::query()
+                    ->where('show_in_menu', true)
+                    ->where('is_active', true)
+                    ->get();
+            });
+        });
+
+        static::deleted(static function () {
+            Cache::forget('pages.global');
+            Cache::rememberForever('pages.global', static function () {
+                return Page::query()
+                    ->where('show_in_menu', true)
+                    ->where('is_active', true)
+                    ->get();
+            });
+        });
     }
 }

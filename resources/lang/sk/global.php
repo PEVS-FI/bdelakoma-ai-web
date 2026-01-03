@@ -56,12 +56,12 @@ return [
     'pages' => [
         'form' => [
             'title_sk' => 'Titul',
-            'title_en' => 'Titul EN',
+            'title_en' => 'Titul (EN)',
             'slug_sk' => 'Slug',
-            'slug_en' => 'Slug EN',
+            'slug_en' => 'Slug (EN)',
             'photo' => 'Fotografia',
             'text_sk' => 'Text',
-            'text_en' => 'Text EN',
+            'text_en' => 'Text (EN)',
             'is_active' => 'Zverejnená',
             'show_in_menu' => 'Zobraziť v menu',
             'menu_id' => 'P.č. v menu',
@@ -73,14 +73,14 @@ return [
     'projects' => [
         'form' => [
             'menu_title_sk' => 'Titul v menu',
-            'menu_title_en' => 'Titul v menu EN',
+            'menu_title_en' => 'Titul v menu (EN)',
             'title_sk' => 'Titul',
-            'title_en' => 'Titul EN',
+            'title_en' => 'Titul (EN)',
             'slug_sk' => 'Slug',
-            'slug_en' => 'Slug EN',
+            'slug_en' => 'Slug (EN)',
             'photo' => 'Fotografia',
             'text_sk' => 'Text',
-            'text_en' => 'Text EN',
+            'text_en' => 'Text (EN)',
             'is_active' => 'Zobraziť',
             'show_in_menu' => 'Zobraziť v menu',
             'plural' => 'Projekty',
@@ -99,5 +99,6 @@ return [
         'subheader' => 'Náš tím sa už viac ako 5 rokov venuje dôležitému výskumu na pacientoch v bdelej kóme.',
         'more' => 'Chcem vedieť viac',
         'partners' => 'Partneri',
-    ]
+    ],
+    'content' => 'Obsah'
 ];

@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Page;
 use App\Models\Project;
+use App\Models\TeamMember;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Cache;
 
@@ -14,10 +16,15 @@ class CacheWebContentCommand extends Command
 
     public function handle(): void
     {
-        $projects = Project::all();
+        Cache::forget('projects.all');
+        Project::refreshCache();
 
-        Cache::forever('projects', $projects);
+        Cache::forget('pages.all');
+        Page::refreshCache();
 
-        $this->info('All projects have been cached successfully.');
+        Cache::forget('team_members.all');
+        TeamMember::refreshCache();
+
+        $this->output->success('All web content cached.');
     }
 }

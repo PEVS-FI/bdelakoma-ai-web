@@ -39,14 +39,14 @@
                 <ul class="nav navbar-nav">
                     <li><a href="{{ localized_route('home') }}">{{ __('global.menu.home') }}</a></li>
 
-                    @foreach(Cache::get('pages.all', static fn () => App\Models\Page::query()->where('is_active', '=', 1)->orderBy('title_' . locale())->get()) as $page)
+                    @foreach($globalPages as $page)
                         <li><a href="{{ localized_route('page', ['slug' => $page->{'slug_' . locale()}]) }}">{{ $page->{'title_' . locale()} }}</a></li>
                     @endforeach
 
                     <li class="menu-item-has-children">
                         <a href="javascript:void(0);">{{ __('global.menu.projects') }}</a>
                         <ul class="sub-menu">
-                            @foreach(Cache::get('projects.all', static fn () => App\Models\Project::query()->where('is_active', '=', true)->orderBy('menu_title_' . locale())->get()) as $project)
+                            @foreach($globalProjects as $project)
                                 <li><a href="{{ localized_route('project', ['slug' => $project->{'slug_' . locale()}]) }}">{{ $project->{'menu_title_' . locale()} }}</a></li>
                             @endforeach
                         </ul>
