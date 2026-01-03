@@ -64,9 +64,17 @@ class ProjectForm
                                             ->prefix(config('app.url').'/project/')
                                             ->readOnly()
                                             ->maxLength(254),
+                                        RichEditor::make('abstract_sk')
+                                            ->label(__('global.projects.form.abstract_sk'))
+                                            ->extraInputAttributes(['style' => 'min-height: 150px;'])
+                                            ->maxLength(65534)
+                                            ->toolbarButtons([
+                                                ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'link'],
+                                                ['undo', 'redo'],
+                                            ]),
                                         RichEditor::make('text_sk')
                                             ->label(__('global.projects.form.text_sk'))
-                                            ->maxLength(65534)
+                                            ->maxLength(16777214)
                                             ->extraInputAttributes(['style' => 'min-height: 300px;'])
                                             ->toolbarButtons([
                                                 ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'link'],
@@ -95,9 +103,18 @@ class ProjectForm
                                             ->prefix(config('app.url').'/page/')
                                             ->readOnly()
                                             ->maxLength(254),
+                                        RichEditor::make('abstract_en')
+                                            ->label(__('global.projects.form.abstract_sk'))
+                                            ->extraInputAttributes(['style' => 'min-height: 150px;'])
+                                            ->maxLength(65534)
+                                            ->toolbarButtons([
+                                                ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'link'],
+                                                ['undo', 'redo'],
+                                            ]),
+
                                         RichEditor::make('text_en')
                                             ->label(__('global.projects.form.text_en'))
-                                            ->maxLength(65534)
+                                            ->maxLength(16777214)
                                             ->extraInputAttributes(['style' => 'min-height: 300px;'])
                                             ->toolbarButtons([
                                                 ['bold', 'italic', 'underline', 'strike', 'subscript', 'superscript', 'link'],

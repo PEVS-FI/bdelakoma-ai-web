@@ -9,6 +9,7 @@ return [
         'team' => 'Team',
         'contact' => 'Contact',
         'projects' => 'Projects',
+        'our_projects' => 'Our projects'
     ],
 
     'languages' => [
@@ -60,6 +61,8 @@ return [
             'slug_sk' => 'Slug (SK)',
             'slug_en' => 'Slug (EN)',
             'photo' => 'Photo',
+            'abstract_sk' => 'Abstract (SK)',
+            'abstract_en' => 'Abstract (EN)',
             'text_sk' => 'Text (SK)',
             'text_en' => 'Text (EN)',
             'is_active' => 'Published',

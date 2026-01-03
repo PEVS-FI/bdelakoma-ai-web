@@ -24,6 +24,8 @@ class Project extends Model
         'length_en',
         'slug_sk',
         'slug_en',
+        'abstract_sk',
+        'abstract_en',
         'text_sk',
         'text_en',
         'is_active'

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 
-class ProjectController extends Controller
+class ProjectDetailController extends Controller
 {
     public function __invoke(string $slug)
     {

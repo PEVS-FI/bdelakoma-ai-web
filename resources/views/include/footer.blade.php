@@ -12,7 +12,8 @@
                             <li><a href="{{ localized_route('home') }}">@lang('global.menu.home')</a></li>
                             @foreach($globalPages as $page)
                                 <li><a href="{{ localized_route('page', ['slug' => $page->{'slug_' . locale()}]) }}">{{ $page->{'title_' . locale()} }}</a></li>
-                            @endforeach{{--                            <li><a href="#">@lang('global.menu.projects')</a></li>--}}
+                            @endforeach
+                            <li><a href="{{ localized_route('projects') }}">@lang('global.menu.projects')</a></li>
                             <li><a href="{{ localized_route('team') }}">@lang('global.menu.team')</a></li>
                             <li><a href="{{ localized_route('contact') }}">@lang('global.menu.contact')</a></li>
                         </ul>

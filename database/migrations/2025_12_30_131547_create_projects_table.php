@@ -18,6 +18,8 @@ return new class extends Migration {
             $table->string('length_en')->nullable();
             $table->string('slug_sk')->unique();
             $table->string('slug_en')->unique();
+            $table->text('abstract_sk')->nullable();
+            $table->text('abstract_en')->nullable();
             $table->longText('text_sk')->nullable();
             $table->longText('text_en')->nullable();
             $table->boolean('is_active')->default(false);

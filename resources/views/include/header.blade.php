@@ -8,6 +8,7 @@
     switch ($routeName)
     {
         case 'project':
+        case 'projects':
         case 'research':
         case 'team':
         case 'page':
@@ -31,6 +32,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                @if(config('app.env') !== 'production')
+                    <a class="navbar-brand" href="{{ localized_route('home') }}"><img src="https://placehold.co/80x50/transparent/red?text=TEST" alt=""></a>
+                @endif
             </div>
             <div id="navbar" class="navbar-collapse collapse navbar-right navigation-holder">
                 <button class="close-navbar"><i class="ti-close"></i></button>
@@ -44,7 +48,7 @@
                     @endforeach
 
                     <li class="menu-item-has-children">
-                        <a href="javascript:void(0);">{{ __('global.menu.projects') }}</a>
+                        <a href="{{ localized_route('projects') }}">{{ __('global.menu.projects') }}</a>
                         <ul class="sub-menu">
                             @foreach($globalProjects as $project)
                                 <li><a href="{{ localized_route('project', ['slug' => $project->{'slug_' . locale()}]) }}">{{ $project->{'menu_title_' . locale()} }}</a></li>

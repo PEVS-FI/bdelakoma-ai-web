@@ -29,8 +29,9 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName(config('app.env') === 'production' ? __('app.name') : 'TEST bdela koma ai')
             ->colors([
-                'primary' => Color::Blue,
+                'primary' => config('app.env') === 'production' ? Color::Blue : Color::Red,
             ])
             ->maxContentWidth(Width::Full)
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')

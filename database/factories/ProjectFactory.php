@@ -18,6 +18,7 @@ class ProjectFactory extends Factory
      */
     public function definition(): array
     {
+        $abstract = '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>';
         $text = '<p>' . implode('</p><p>', $this->faker->paragraphs(random_int(5, 10))) . '</p>';
 
         return [
@@ -30,6 +31,8 @@ class ProjectFactory extends Factory
             'length_en' => $this->faker->word(),
             'slug_sk' => Str::slug($this->faker->word()),
             'slug_en' => Str::slug($this->faker->word()),
+            'abstract_sk' => $abstract,
+            'abstract_en' => $abstract,
             'text_sk' => $text,
             'text_en' => $text,
             'is_active' => true,

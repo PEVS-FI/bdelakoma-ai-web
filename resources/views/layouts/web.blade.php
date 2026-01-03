@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Michal Drobný">
     <!-- Page Title -->
-    <title>{{ __('global.title') }}</title>
+    <title>@if(config('app.end') !== 'production')TEST @endif {{ __('global.title') }}</title>
     <!-- Icon fonts -->
     @vite('resources/css/themify-icons.css')
     @vite('resources/css/font-awesome.min.css')

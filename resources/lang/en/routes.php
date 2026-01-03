@@ -4,5 +4,6 @@
         'research' => 'research',
         'team' => 'team',
         'page' => 'page',
-        'project' => 'project'
+        'project' => 'project',
+        'projects' => 'projects',
     ];

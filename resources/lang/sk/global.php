@@ -9,6 +9,7 @@ return [
         'team' => 'Tím',
         'contact' => 'Kontakt',
         'projects' => 'Projekty',
+        'our_projects' => 'Naše projekty'
     ],
 
     'languages' => [
@@ -60,6 +61,8 @@ return [
             'slug_sk' => 'Slug',
             'slug_en' => 'Slug (EN)',
             'photo' => 'Fotografia',
+            'abstract_sk' => 'Abstract',
+            'abstract_en' => 'Abstract (EN)',
             'text_sk' => 'Text',
             'text_en' => 'Text (EN)',
             'is_active' => 'Zverejnená',
