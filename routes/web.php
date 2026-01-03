@@ -23,16 +23,15 @@ Route::multilingual('project/{slug}', ProjectDetailController::class)
 Route::multilingual('projects', AllProjectsController::class)
     ->name('projects');
 
-
 Route::multilingual('team', TeamController::class)
     ->name('team');
 
 Route::get('language/{locale}', static function (string $locale) {
     app()->setLocale($locale);
 
-    $previousRouteName = substr(app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName(),3);
+    $previousRouteName = substr(app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName(), 3);
 
     /** @noinspection LaravelUnknownRouteNameInspection */
-    return redirect()->route( "$locale.$previousRouteName");
+    return redirect()->route("$locale.$previousRouteName");
 })
     ->name('language.locale');

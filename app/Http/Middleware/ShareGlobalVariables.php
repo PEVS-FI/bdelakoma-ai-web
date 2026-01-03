@@ -21,9 +21,9 @@ class ShareGlobalVariables
     {
         View::share('globalProjects',
             Cache::get('projects.all',
-                static fn() => Cache::rememberForever(
+                static fn () => Cache::rememberForever(
                     'projects.all',
-                    static fn() => Project::query()
+                    static fn () => Project::query()
                         ->where('is_active', true)
                         ->get()
                 )
@@ -32,9 +32,9 @@ class ShareGlobalVariables
 
         View::share('globalPages',
             Cache::get('pages.global',
-                static fn() => Cache::rememberForever(
+                static fn () => Cache::rememberForever(
                     'pages.global',
-                    static fn() => Page::query()
+                    static fn () => Page::query()
                         ->where('show_in_menu', true)
                         ->where('is_active', true)
                         ->get()

@@ -14,6 +14,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TeamMemberResource extends Resource
@@ -56,7 +57,20 @@ class TeamMemberResource extends Resource
             ]);
     }
 
-    protected static ?string $recordTitleAttribute = 'surname';
+    public static function getRecordTitle(?Model $record): ?string
+    {
+        return $record->full_name ?? null;
+    }
+
+    public static function getGlobalSearchResultTitle(Model $record): string
+    {
+        return $record->full_name;
+    }
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['first_name', 'surname'];
+    }
 
     public static function getModelLabel(): string
     {

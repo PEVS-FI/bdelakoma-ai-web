@@ -13,8 +13,7 @@ class ProjectDetailController extends Controller
             ->where('slug_'.locale(), '=', $slug)
             ->first();
 
-        if($project === null)
-        {
+        if ($project === null) {
             return redirect()->to(localized_route('home'));
         }
 

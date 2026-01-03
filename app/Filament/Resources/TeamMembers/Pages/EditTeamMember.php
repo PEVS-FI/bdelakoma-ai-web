@@ -7,7 +7,6 @@ use Filament\Actions\DeleteAction;
 use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\RestoreAction;
 use Filament\Resources\Pages\EditRecord;
-use Filament\Support\Enums\Width;
 
 class EditTeamMember extends EditRecord
 {

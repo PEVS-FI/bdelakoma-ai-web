@@ -18,13 +18,13 @@ class UserSeeder extends Seeder
             ? 'password'
             : $this->getRandomString(16);
 
-        $this->command->info('admin@bdelakoma-ai.sk: ' . $password);
+        $this->command->info('admin@bdelakoma-ai.sk: '.$password);
 
         User::factory()->create([
             'name' => 'Admin',
             'email' => 'admin@bdelakoma-ai.sk',
             'password' => Hash::make($password),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
         ]);
     }
 

@@ -20,7 +20,7 @@ trait Cacheable
 
     private function internalRefreshCache(): void
     {
-        $key = Str::snake(Str::pluralStudly(class_basename($this))) . '.all';
+        $key = Str::snake(Str::pluralStudly(class_basename($this))).'.all';
 
         Cache::forget($key);
         Cache::rememberForever($key, function () {

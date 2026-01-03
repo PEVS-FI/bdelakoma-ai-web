@@ -55,6 +55,7 @@ class ProjectResource extends Resource
                 SoftDeletingScope::class,
             ]);
     }
+
     public static function getModelLabel(): string
     {
         return __('global.projects.form.singular');

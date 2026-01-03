@@ -12,12 +12,16 @@ class ContactComponent extends Component
 {
     #[Validate]
     public ?string $name = '';
+
     #[Validate]
     public ?string $surname = '';
+
     #[Validate]
     public ?string $email = '';
+
     #[Validate]
     public ?string $subject = '';
+
     #[Validate]
     public ?string $message = '';
 

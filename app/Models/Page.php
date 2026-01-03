@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Cache;
 
 class Page extends Model
 {
-    use HasFactory, SoftDeletes;
     use Cacheable;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'title_sk',
@@ -23,7 +23,7 @@ class Page extends Model
         'text_en',
         'is_active',
         'show_in_menu',
-        'menu_id'
+        'menu_id',
     ];
 
     protected function casts(): array

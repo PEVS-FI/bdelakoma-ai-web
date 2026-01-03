@@ -11,8 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TeamMember extends Model
 {
-    use HasFactory, SoftDeletes;
     use Cacheable;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = [
         'title_before',
@@ -41,7 +41,7 @@ class TeamMember extends Model
                 $this->title_before,
                 $this->first_name,
                 $this->surname,
-                $this->title_after
+                $this->title_after,
             ])->filter()->join(' '),
         );
     }

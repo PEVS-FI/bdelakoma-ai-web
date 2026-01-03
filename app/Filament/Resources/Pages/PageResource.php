@@ -11,6 +11,7 @@ use App\Models\Page;
 use BackedEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
+use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
@@ -69,4 +70,9 @@ class PageResource extends Resource
     }
 
     protected static bool $hasTitleCaseModelLabel = false;
+
+    public function getMaxContentWidth(): Width|string|null
+    {
+        return Width::Full;
+    }
 }

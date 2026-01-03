@@ -9,12 +9,12 @@ return [
         'team' => 'Tím',
         'contact' => 'Kontakt',
         'projects' => 'Projekty',
-        'our_projects' => 'Naše projekty'
+        'our_projects' => 'Naše projekty',
     ],
 
     'languages' => [
         'sk' => 'Slovenčina',
-        'en' => 'Angličtina'
+        'en' => 'Angličtina',
     ],
     'contact' => [
         'header' => 'Kontaktujte nás',
@@ -48,11 +48,11 @@ return [
             'additional_info' => 'Doplnkové informácie',
             'plural' => 'Členovia tímu',
             'skill_name' => 'Názov',
-            'singular' => 'člena tímu'
+            'singular' => 'člena tímu',
         ],
         'web' => [
             'skills' => 'Špecializácia',
-        ]
+        ],
     ],
     'pages' => [
         'form' => [
@@ -68,7 +68,7 @@ return [
             'menu_id' => 'P.č. v menu',
             'menu_id_short' => 'P.č.',
             'plural' => 'Stránky',
-            'singular' => 'stránku'
+            'singular' => 'stránku',
         ],
     ],
     'projects' => [
@@ -87,7 +87,7 @@ return [
             'is_active' => 'Zobraziť',
             'show_in_menu' => 'Zobraziť v menu',
             'plural' => 'Projekty',
-            'singular' => 'Projekt'
+            'singular' => 'Projekt',
         ],
         'project_details' => 'Detaily projekty',
     ],
@@ -103,5 +103,6 @@ return [
         'more' => 'Chcem vedieť viac',
         'partners' => 'Partneri',
     ],
-    'content' => 'Obsah'
+    'content' => 'Obsah',
+    'web' => 'Web',
 ];

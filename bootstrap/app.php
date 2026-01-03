@@ -1,10 +1,10 @@
 <?php
 
 use App\Http\Middleware\ShareGlobalVariables;
+use ChinLeung\MultilingualRoutes\DetectRequestLocale;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use ChinLeung\MultilingualRoutes\DetectRequestLocale;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(

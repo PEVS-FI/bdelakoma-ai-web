@@ -16,7 +16,7 @@ class ProjectSeeder extends Seeder
             'title_sk' => 'Nadácia Tatra banky',
             'title_en' => 'Tatra banka Foundation',
             'slug_sk' => Str::slug('Nadácia Tatra banky'),
-            'slug_en' => Str::slug('Tatra banka Foundation')
+            'slug_en' => Str::slug('Tatra banka Foundation'),
         ]);
 
         Project::factory()->create([
@@ -25,7 +25,7 @@ class ProjectSeeder extends Seeder
             'title_sk' => 'Fond SK-NIC',
             'title_en' => 'Fond SK-NIC',
             'slug_sk' => Str::slug('Fond SK-NIC'),
-            'slug_en' => Str::slug('Fond SK-NIC')
+            'slug_en' => Str::slug('Fond SK-NIC'),
         ]);
 
         Project::factory()->create([
@@ -34,7 +34,7 @@ class ProjectSeeder extends Seeder
             'title_sk' => 'Nadácia VÚB banky',
             'title_en' => 'Fond SK-NIC',
             'slug_sk' => Str::slug('Nadácia VÚB banky'),
-            'slug_en' => Str::slug('VUB Bank Foundation')
+            'slug_en' => Str::slug('VUB Bank Foundation'),
         ]);
     }
 }

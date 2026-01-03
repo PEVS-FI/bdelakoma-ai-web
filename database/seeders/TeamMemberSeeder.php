@@ -53,12 +53,12 @@ class TeamMemberSeeder extends Seeder
 
         foreach ($members as $memberData) {
             $photoPath = null;
-            $sourcePath = resource_path('images/team-members/' . $memberData['photo_source']);
+            $sourcePath = resource_path('images/team-members/'.$memberData['photo_source']);
 
             if (File::exists($sourcePath)) {
                 $filename = $memberData['photo_source'];
-                Storage::disk('public')->put('team-members/' . $filename, File::get($sourcePath));
-                $photoPath = 'team-members/' . $filename;
+                Storage::disk('public')->put('team-members/'.$filename, File::get($sourcePath));
+                $photoPath = 'team-members/'.$filename;
             }
 
             TeamMember::create([

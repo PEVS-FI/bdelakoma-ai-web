@@ -6,6 +6,7 @@ use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationItem;
 use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -29,7 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName(config('app.env') === 'production' ? __('app.name') : 'TEST bdela koma ai')
+            ->brandName(config('app.env') === 'production' ? config('app.name') : 'TEST bdela koma ai')
             ->colors([
                 'primary' => config('app.env') === 'production' ? Color::Blue : Color::Red,
             ])
@@ -57,6 +58,13 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->navigationItems([
+                NavigationItem::make()
+                    ->label(fn (): string => __('global.web'))
+                    ->url(url('/'))
+                    ->icon('heroicon-s-arrow-long-left')
+                    ->openUrlInNewTab(),
             ]);
     }
 }

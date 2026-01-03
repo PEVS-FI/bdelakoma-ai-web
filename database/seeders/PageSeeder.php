@@ -26,17 +26,17 @@ class PageSeeder extends Seeder
                 'is_active' => true,
                 'show_in_menu' => true,
                 'menu_id' => 1,
-            ]
+            ],
         ];
 
         foreach ($pages as $pageData) {
             $photoPath = null;
-            $sourcePath = resource_path('images/pages/' . $pageData['photo_source']);
+            $sourcePath = resource_path('images/pages/'.$pageData['photo_source']);
 
             if (File::exists($sourcePath)) {
                 $filename = $pageData['photo_source'];
-                Storage::disk('public')->put('pages/' . $filename, File::get($sourcePath));
-                $photoPath = 'pages/' . $filename;
+                Storage::disk('public')->put('pages/'.$filename, File::get($sourcePath));
+                $photoPath = 'pages/'.$filename;
             }
 
             Page::factory()->create([

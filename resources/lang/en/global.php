@@ -9,12 +9,12 @@ return [
         'team' => 'Team',
         'contact' => 'Contact',
         'projects' => 'Projects',
-        'our_projects' => 'Our projects'
+        'our_projects' => 'Our projects',
     ],
 
     'languages' => [
         'sk' => 'Slovak',
-        'en' => 'English'
+        'en' => 'English',
     ],
     'contact' => [
         'header' => 'Contact Us',
@@ -48,11 +48,11 @@ return [
             'additional_info' => 'Additional Info',
             'plural' => 'Team Members',
             'skill_name' => 'Name',
-            'singular' => 'Team Member'
+            'singular' => 'Team Member',
         ],
         'web' => [
             'skills' => 'Specialization',
-        ]
+        ],
     ],
     'pages' => [
         'form' => [
@@ -68,7 +68,7 @@ return [
             'menu_id' => 'Menu Order',
             'menu_id_short' => 'Order',
             'plural' => 'Pages',
-            'singular' => 'Page'
+            'singular' => 'Page',
         ],
     ],
     'projects' => [
@@ -87,7 +87,7 @@ return [
             'is_active' => 'Published',
             'show_in_menu' => 'Show in Menu',
             'plural' => 'Projects',
-            'singular' => 'Project'
+            'singular' => 'Project',
         ],
         'project_details' => 'Project Details',
     ],
@@ -103,5 +103,5 @@ return [
         'more' => 'I want to know more',
         'partners' => 'Partners',
     ],
-    'content' => 'Content'
+    'content' => 'Content',
 ];

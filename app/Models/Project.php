@@ -6,14 +6,13 @@ use App\Models\Support\Cacheable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Str;
 
 class Project extends Model
 {
-    use SoftDeletes;
-    use HasFactory;
     use Cacheable;
+    use HasFactory;
+    use SoftDeletes;
+
     protected $fillable = [
         'code',
         'menu_title_sk',
@@ -28,7 +27,7 @@ class Project extends Model
         'abstract_en',
         'text_sk',
         'text_en',
-        'is_active'
+        'is_active',
     ];
 
     public function cacheQuery($query)
