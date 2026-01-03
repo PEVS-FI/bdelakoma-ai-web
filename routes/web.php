@@ -29,9 +29,6 @@ Route::multilingual('team', TeamController::class)
 Route::get('language/{locale}', static function (string $locale) {
     app()->setLocale($locale);
 
-    $previousRouteName = substr(app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName(), 3);
-
-    /** @noinspection LaravelUnknownRouteNameInspection */
-    return redirect()->route("$locale.$previousRouteName");
+    return redirect()->to(localized_route('home'));
 })
     ->name('language.locale');
