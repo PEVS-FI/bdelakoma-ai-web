@@ -83,4 +83,13 @@ class TeamMemberResource extends Resource
     }
 
     protected static bool $hasTitleCaseModelLabel = false;
+
+    protected static ?int $navigationSort = 1;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    protected static string|null|\UnitEnum $navigationGroup = 'CMS';
 }

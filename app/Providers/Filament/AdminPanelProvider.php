@@ -12,6 +12,7 @@ use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Support\Enums\Width;
+use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
@@ -61,10 +62,15 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationItems([
                 NavigationItem::make()
-                    ->label(fn (): string => __('global.web'))
+                    ->label(fn(): string => __('global.web'))
                     ->url(url('/'))
-                    ->icon('heroicon-s-arrow-long-left')
+                    ->icon(Heroicon::GlobeAlt)
                     ->openUrlInNewTab(),
-            ]);
+            ])
+            ->collapsibleNavigationGroups(false)
+            ->sidebarCollapsibleOnDesktop()
+            ->topNavigation();
+
+
     }
 }

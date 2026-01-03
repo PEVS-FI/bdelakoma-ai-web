@@ -84,4 +84,13 @@ class PageResource extends Resource
     {
         return ['title_sk', 'title_en'];
     }
+
+    protected static ?int $navigationSort = 3;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    protected static string|null|\UnitEnum $navigationGroup = 'CMS';
 }

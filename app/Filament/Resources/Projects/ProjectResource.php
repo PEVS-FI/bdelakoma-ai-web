@@ -83,4 +83,13 @@ class ProjectResource extends Resource
     {
         return ['title_sk', 'title_en', 'menu_title_sk', "menu_title_en"];
     }
+
+    protected static ?int $navigationSort = 2;
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
+    }
+
+    protected static string|null|\UnitEnum $navigationGroup = 'CMS';
 }
