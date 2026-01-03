@@ -6,10 +6,10 @@
         <div class="container">
             <div class="row">
                 <div class="col col-xs-12">
-                    <h2>{{ __('error.404.title') }}</h2>
+                    <h2>{{ __('error.500.title') }}</h2>
                     <ol class="breadcrumb">
                         <li><a href="{{ localized_route('home') }}">@lang('global.menu.home')</a></li>
-                        <li>{{ __('error.404.description') }}</li>
+                        <li>{{ __('error.500.description') }}</li>
                     </ol>
                 </div>
             </div> <!-- end row -->
@@ -34,15 +34,15 @@
         </div>
     </section>
     <!-- end page-title -->
-    <!-- start error-404-section -->
+    <!-- start error-500-section -->
     <section class="error-404-section section-padding">
         <div class="container">
             <div class="row">
                 <div class="col col-xs-12">
                     <div class="content clearfix">
                         <div class="error-message">
-                            <h3>{{ __('error.404.text') }}</h3>
-                            <p>{{ __('error.404.subtext') }}</p>
+                            <h3>{{ __('error.500.text') }}</h3>
+                            <p>{{ __('error.500.subtext') }}</p>
                             <a href="{{ localized_route('home') }}" class="theme-btn-s2">@lang('global.menu.home')</a>
                         </div>
                     </div>
@@ -50,5 +50,5 @@
             </div> <!-- end row -->
         </div> <!-- end container -->
     </section>
-    <!-- end error-404-section -->
+    <!-- end error-500-section -->
 @endsection
