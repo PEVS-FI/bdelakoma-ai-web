@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ResearchController;
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,8 +13,11 @@ Route::multilingual('/', HomeController::class)
 Route::multilingual('contact', ContactController::class)
     ->name('contact');
 
-Route::multilingual('research', ResearchController::class)
-    ->name('research');
+Route::multilingual('page/{slug}', PageController::class)
+    ->name('page');
+
+Route::multilingual('project/{slug}', ProjectController::class)
+    ->name('project');
 
 Route::multilingual('team', TeamController::class)
     ->name('team');

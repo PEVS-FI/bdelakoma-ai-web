@@ -2,5 +2,8 @@
     return [
         'contact' => 'kontakt',
         'research' => 'vyskum',
-        'team' => 'tim'
+        'team' => 'tim',
+        'page' => 'stranka',
+        'project' => 'projekt'
+
     ];

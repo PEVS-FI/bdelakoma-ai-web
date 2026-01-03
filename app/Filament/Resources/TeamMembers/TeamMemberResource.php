@@ -20,7 +20,7 @@ class TeamMemberResource extends Resource
 {
     protected static ?string $model = TeamMember::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::Users;
 
     public static function form(Schema $schema): Schema
     {
@@ -60,7 +60,7 @@ class TeamMemberResource extends Resource
 
     public static function getModelLabel(): string
     {
-        return 'člena tímu';
+        return __('global.team_members.form.singular');
     }
 
     public static function getPluralModelLabel(): string

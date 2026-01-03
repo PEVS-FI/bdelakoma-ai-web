@@ -10,7 +10,12 @@
                         <h2 class="wow fadeInLeftSlow" data-wow-delay="0.1s">{{ __('global.home.header') }}</h2>
                         <span class="wow fadeInUp" data-wow-delay="0.8s">{{ __('global.home.subheader') }}</span>
                         <div class="wow fadeInUp" data-wow-delay="1.0s">
-                            <a href="{{ localized_route('research') }}" class="theme-btn">{{ __('global.home.more') }}</a>
+                            @php
+                                $route = \App\Models\Page::query()->where('pages.menu_id', '=', 1)->first();
+                            @endphp
+                            @if($route)
+                                <a href="{{ localized_route('page', ['slug' => $route->{'slug_' . locale()}]) }}" class="theme-btn">{{ __('global.home.more') }}</a>
+                            @endif
                             <a href="{{ localized_route('team') }}" class="theme-btn-s2">{{ __('global.team.header') }}</a>
                         </div>
                     </div>
@@ -28,7 +33,7 @@
         <div class="container">
             <div class="wpo-client-item">
                 <div style="margin-bottom: 2rem;">
-                    <h2>Partneri</h2>
+                    <h2>{{ __('global.home.partners') }}</h2>
                 </div>
                 <div class="Gift-carousel owl-carousel">
                     <a href="https://paneurouni.com" target="_blank"><img src="{{ asset('images/partners/pevs.png') }}" lazy alt="Paneurópska vysoká škola"></a>

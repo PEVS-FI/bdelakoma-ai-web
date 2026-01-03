@@ -31,7 +31,6 @@ export default defineConfig({
             targets: [
                 {
                     src: 'resources/fonts',
-
                     dest: 'fonts'
                 }
             ]

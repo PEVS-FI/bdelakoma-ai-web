@@ -6,30 +6,34 @@ use App\Models\Support\Cacheable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Str;
 
-class Project extends Model
+class Page extends Model
 {
-    use SoftDeletes;
-    use HasFactory;
+    use HasFactory, SoftDeletes;
     use Cacheable;
+
     protected $fillable = [
-        'code',
-        'menu_title_sk',
-        'menu_title_en',
         'title_sk',
         'title_en',
-        'length_sk',
-        'length_en',
         'slug_sk',
         'slug_en',
+        'photo',
         'text_sk',
         'text_en',
-        'is_active'
+        'is_active',
+        'show_in_menu',
+        'menu_id'
     ];
 
-    public function cacheQuery($query)
+    protected function casts(): array
+    {
+        return [
+            'is_active' => 'boolean',
+            'show_in_menu' => 'boolean',
+        ];
+    }
+
+    protected function cacheQuery($query)
     {
         return $query->where('is_active', '=', true);
     }

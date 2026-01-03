@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
+use App\Models\Support\Cacheable;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Cache;
 
 class TeamMember extends Model
 {
     use HasFactory, SoftDeletes;
+    use Cacheable;
 
     protected $fillable = [
         'title_before',
@@ -46,22 +48,8 @@ class TeamMember extends Model
 
     protected static function booted(): void
     {
-        static::saved(static function () {
-            Cache::forget('team_members.all');
-            Cache::rememberForever('team_members.all', static function () {
-                return TeamMember::query()
-                    ->orderBy('surname')->orderBy('first_name')
-                    ->get();
-            });
-        });
-
-        static::deleted(static function () {
-            Cache::forget('team_members.all');
-            Cache::rememberForever('team_members.all', static function () {
-                return TeamMember::query()
-                    ->orderBy('surname')->orderBy('first_name')
-                    ->get();
-            });
+        static::addGlobalScope('order', static function (Builder $builder) {
+            $builder->orderBy('surname')->orderBy('first_name');
         });
     }
 }
