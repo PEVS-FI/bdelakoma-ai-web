@@ -16,7 +16,7 @@
                 <div class="col-md-8">
                     <div class="wpo-minimals-wrap">
                         <div class="minimals-img">
-                            <img src="storage/{{ asset($page->photo) }}" alt="Page image">
+                            <img src="{{ Storage::url($member->photo) }}" alt="Page image">
                         </div>
                     </div>
                     <div class="wpo-p-details-section">
