@@ -15,6 +15,7 @@ use Filament\Support\Enums\Width;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PageResource extends Resource
@@ -22,8 +23,6 @@ class PageResource extends Resource
     protected static ?string $model = Page::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::ListBullet;
-
-    protected static ?string $recordTitleAttribute = 'title_sk';
 
     public static function form(Schema $schema): Schema
     {
@@ -71,8 +70,18 @@ class PageResource extends Resource
 
     protected static bool $hasTitleCaseModelLabel = false;
 
-    public function getMaxContentWidth(): Width|string|null
+    public static function getRecordTitle(?Model $record): ?string
     {
-        return Width::Full;
+        return $record->{"title_" . locale()} ?? null;
+    }
+
+    public static function getGlobalSearchResultTitle(Model $record): string
+    {
+        return $record->{"title_" . locale()};
+    }
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title_sk', 'title_en'];
     }
 }

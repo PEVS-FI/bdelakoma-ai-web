@@ -14,6 +14,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ProjectResource extends Resource
@@ -67,4 +68,19 @@ class ProjectResource extends Resource
     }
 
     protected static bool $hasTitleCaseModelLabel = false;
+
+    public static function getRecordTitle(?Model $record): ?string
+    {
+        return $record->{"title_" . locale()} ?? null;
+    }
+
+    public static function getGlobalSearchResultTitle(Model $record): string
+    {
+        return $record->{"title_" . locale()};
+    }
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['title_sk', 'title_en', 'menu_title_sk', "menu_title_en"];
+    }
 }
