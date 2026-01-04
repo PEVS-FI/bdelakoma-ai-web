@@ -2,6 +2,9 @@
 
 return [
     'title' => 'Bdelá kóma AI',
+    'og' => [
+        'description' => 'Kolaboratívna výskumná iniciatíva aplikujúca umelú inteligenciu a pokročilú analýzu dát na skvalitnenie domácej starostlivosti o ťažko chorých pacientov. Zistite, ako naše interdisciplinárne partnerstvo spája technológie s ľudským prístupom k liečbe s cieľom zlepšiť kvalitu života a lekárske rozhodovanie.'
+    ],
     'toggle_navigation' => 'Prepnúť navigáciu',
     'menu' => [
         'home' => 'Home',

@@ -7,8 +7,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Michal Drobný">
+
+    <!-- HTML Meta Tags -->
+    <meta name="description" content="{{ __('global.og.description') }}">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{{ config('app.url') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ __('global.title') }}">
+    <meta property="og:description" content="{{ __('global.og.description') }}">
+    <meta property="og:image" content="{{ asset('images/cover.png') }}">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:domain" content="bdelakoma-ai.sk">
+    <meta property="twitter:url" content="{{ config('app.url') }}">
+    <meta name="twitter:title" content="{{ __('global.title') }}">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="{{ asset('images/cover.png') }}">
+
     <!-- Page Title -->
-    <title>@if(config('app.env') !== 'production')TEST @endif {{ __('global.title') }}</title>
+    <title>@if(config('app.env') !== 'production')TEST @endif{{ __('global.title') }}</title>
     <!-- Icon fonts -->
     @vite('resources/css/themify-icons.css')
     @vite('resources/css/font-awesome.min.css')

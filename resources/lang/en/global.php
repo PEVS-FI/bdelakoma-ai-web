@@ -2,6 +2,9 @@
 
 return [
     'title' => 'Awake Coma AI',
+    'og' => [
+        'description' => 'A collaborative research initiative applying Artificial Intelligence and advanced data analysis to enhance home care for severely ill patients. Discover how our interdisciplinary partnership connects technology with human-centric healthcare to improve quality of life and medical decision-making.'
+    ],
     'toggle_navigation' => 'Toggle navigation',
     'menu' => [
         'home' => 'Home',
