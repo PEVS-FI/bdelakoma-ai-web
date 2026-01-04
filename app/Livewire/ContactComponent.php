@@ -4,12 +4,15 @@ namespace App\Livewire;
 
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class ContactComponent extends Component
 {
+    public $turnstileToken;
+
     #[Validate]
     public ?string $name = '';
 
@@ -35,6 +38,7 @@ class ContactComponent extends Component
             'email' => ['required', 'email'],
             'subject' => ['required', 'string', 'max:255'],
             'message' => ['required', 'string', 'max:2000'],
+            'turnstileToken' => ['required'],
         ];
     }
 
@@ -53,6 +57,17 @@ class ContactComponent extends Component
     {
         $this->isLoading = true;
         $this->validate();
+
+        $response = Http::asForm()->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
+            'secret' => config('cloudflare.turnstile.secret_key'),
+            'response' => $this->turnstileToken,
+            'remoteip' => request()->ip(),
+        ]);
+
+        if (! $response->json()['success']) {
+            $this->addError('turnstileToken', __('global.cloudflare.turnstile.error'));
+            return;
+        }
 
         $this->reset();
         Session::put('success', __('global.contact.form.success'));

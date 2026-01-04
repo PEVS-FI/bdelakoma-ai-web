@@ -109,5 +109,10 @@ return [
     ],
     'content' => 'Obsah',
     'web' => 'Web',
-    'read_more' => 'Čítať ďalej'
+    'read_more' => 'Čítať ďalej',
+    'cloudflare' => [
+        'turnstile' => [
+            'error' => 'Bezpečnostná kontrola zlyhala. Skúste to znovu.',
+        ],
+    ]
 ];

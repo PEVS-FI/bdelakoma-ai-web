@@ -108,6 +108,10 @@ return [
         'partners_description' => 'This project is made possible through the support of our partners and academic collaboration.'
     ],
     'content' => 'Content',
-    'read_more' => 'Read more'
-
+    'read_more' => 'Read more',
+    'cloudflare' => [
+        'turnstile' => [
+            'error' => 'Security check failed. Please try again.',
+        ],
+    ]
 ];

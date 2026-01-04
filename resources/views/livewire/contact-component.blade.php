@@ -41,12 +41,25 @@
             <p class="error">{{ $message }}</p>
             @enderror
         </div>
-        <div class="submit-area">
-            <button type="submit" @if($isLoading) disabled @endif class= theme-btn submit-btn">{{ __('global.contact.form.send') }}</button>
-            @if($isLoading)
-            <div id="loader">
-                <i class="ti-reload"></i>
+        <div>
+            <div wire:ignore>
+                <div class="cf-turnstile"
+                     data-sitekey="{{ config('cloudflare.turnstile.site_key') }}"
+                     data-callback="handleTurnstileResponse">
+                </div>
             </div>
+
+            @error('turnstileToken')
+            <span class="text-red-500">{{ $message }}</span>
+            @enderror
+        </div>
+
+        <div class="submit-area">
+            <button type="submit" @if($isLoading) disabled @endif class="theme-btn submit-btn">{{ __('global.contact.form.send') }}</button>
+            @if($isLoading)
+                <div id="loader">
+                    <i class="ti-reload"></i>
+                </div>
             @endif
         </div>
 
