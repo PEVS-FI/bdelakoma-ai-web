@@ -101,10 +101,12 @@ return [
         'header' => 'Our Team',
     ],
     'home' => [
-        'header' => 'Research on Patients in Awake Coma',
-        'subheader' => 'Our team has been conducting important research on patients in awake coma for more than 5 years.',
-        'more' => 'I want to know more',
+        'header' => 'Artificial Intelligence Supporting Patients in Waking Coma',
+        'subheader' => "Bridging advanced informatics and medicine. For over 5 years, we have been developing data collection systems and machine learning models that help predict health conditions and improve the safety of home care for severely ill patients.",
+        'more' => 'Discover Our Research',
         'partners' => 'Partners',
     ],
     'content' => 'Content',
+    'read_more' => 'Read more'
+
 ];

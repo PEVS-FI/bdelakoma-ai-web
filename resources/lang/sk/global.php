@@ -101,11 +101,12 @@ return [
         'header' => 'Náš tím',
     ],
     'home' => [
-        'header' => 'Výskum pacientov v bdelej kóme',
-        'subheader' => 'Náš tím sa už viac ako 5 rokov venuje dôležitému výskumu na pacientoch v bdelej kóme.',
-        'more' => 'Chcem vedieť viac',
+        'header' => 'Umelá inteligencia v službách pacientov v bdelej kóme',
+        'subheader' => "Spájame pokročilú informatiku a medicínu. Už viac ako 5 rokov vyvíjame systémy na zber dát a modely strojového učenia, ktoré pomáhajú predikovať zdravotný stav a zvyšujú bezpečnosť domácej starostlivosti o ťažko chorých pacientov.",
+        'more' => 'Spoznajte náš výskum',
         'partners' => 'Partneri',
     ],
     'content' => 'Obsah',
     'web' => 'Web',
+    'read_more' => 'Čítať ďalej'
 ];

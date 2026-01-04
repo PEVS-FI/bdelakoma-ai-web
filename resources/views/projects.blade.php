@@ -55,7 +55,7 @@
                                                  class="panel-collapse collapse {{ $loop->index === 0 ? 'in' : '' }}">
                                                 <div class="panel-body">
                                                     {!! $project->{'abstract_' . locale()} !!}
-                                                    <a style="color: #fe3e57;" href="{{ localized_route('project', [ 'slug' => $project->{'slug_' . locale()}]) }}" class="read-more">{{ __('global.home.more') }} ...</a>
+                                                    <a style="color: #fe3e57;" href="{{ localized_route('project', [ 'slug' => $project->{'slug_' . locale()}]) }}" class="read-more">{{ __('global.read_more') }} ...</a>
                                                 </div>
                                             </div>
                                         </div>
