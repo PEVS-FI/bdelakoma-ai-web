@@ -28,6 +28,8 @@
 
     <!-- Page Title -->
     <title>@if(config('app.env') !== 'production')TEST @endif{{ __('global.title') }}</title>
+
+    <link rel="preconnect" href="https://challenges.cloudflare.com">
     <!-- Icon fonts -->
     @vite('resources/css/themify-icons.css')
     @vite('resources/css/font-awesome.min.css')
@@ -50,8 +52,9 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
     <![endif]-->
+
+    @yield('css')
 </head>
 
 <body id="home">
@@ -84,6 +87,7 @@
 <!-- Custom script for this template -->
 <script src="{{ asset('assets/js/script.js')  }}"></script>
 
+@yield('js')
 </body>
 
 </html>

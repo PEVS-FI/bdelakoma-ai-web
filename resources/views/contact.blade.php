@@ -1,5 +1,13 @@
 @extends('layouts.web')
 
+@section('js')
+    <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+    ></script>
+@endsection
+
 @section('content')
     <!-- start page-title -->
     <section class="page-title bg-animate-shape">
@@ -80,5 +88,7 @@
             </div> <!-- end container -->
         </div>
     </section>
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAACKYTIE54SBt7xgi"></div>
+
     <!-- end wpo-wpo-contact-form-map -->
 @endsection
