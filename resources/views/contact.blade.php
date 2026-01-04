@@ -6,6 +6,13 @@
             async
             defer
     ></script>
+
+    <script>
+        function handleTurnstileResponse(token) {
+            @this.set('turnstileToken', token);
+        }
+    </script>
+
 @endsection
 
 @section('content')

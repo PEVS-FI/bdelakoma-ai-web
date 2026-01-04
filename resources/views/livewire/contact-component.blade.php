@@ -52,6 +52,7 @@
             @error('turnstileToken')
             <p class="error">{{ $message }}</p>
             @enderror
+
         </div>
 
         <div class="submit-area">
