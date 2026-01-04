@@ -88,7 +88,6 @@
             </div> <!-- end container -->
         </div>
     </section>
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAACKYTIE54SBt7xgi"></div>
 
     <!-- end wpo-wpo-contact-form-map -->
 @endsection
