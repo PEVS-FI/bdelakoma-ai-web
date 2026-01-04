@@ -50,7 +50,7 @@
             </div>
 
             @error('turnstileToken')
-            <p class="error">{{ $message }}</span>
+            <p class="error">{{ $message }}</p>
             @enderror
         </div>
 

@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -68,6 +69,17 @@ class ContactComponent extends Component
             $this->addError('turnstileToken', __('global.cloudflare.turnstile.error'));
             return;
         }
+
+        $subject = $this->subject;
+        $messageText = 'Meno: ' . $this->name . ' ' . $this->surname . '\n' .
+                   'E-mail: ' . $this->email . '\n' .
+                   'Správa: ' . $this->message;
+
+        Mail::raw($messageText, static function ($message) use ($subject) {
+            $message->to('jan.lacko@paneurouni.com')
+                ->bcc('michal.drobny@paneurouni.com')
+                ->subject($subject);
+        });
 
         $this->reset();
         Session::put('success', __('global.contact.form.success'));
