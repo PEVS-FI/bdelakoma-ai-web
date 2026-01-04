@@ -53,6 +53,11 @@
             <p class="error">{{ $message }}</p>
             @enderror
 
+            <script>
+                function handleTurnstileResponse(token) {
+                    @this.set('turnstileToken', token);
+                }
+            </script>
         </div>
 
         <div class="submit-area">
