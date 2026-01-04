@@ -105,6 +105,7 @@ return [
         'subheader' => "Spájame pokročilú informatiku a medicínu. Už viac ako 5 rokov vyvíjame systémy na zber dát a modely strojového učenia, ktoré pomáhajú predikovať zdravotný stav a zvyšujú bezpečnosť domácej starostlivosti o ťažko chorých pacientov.",
         'more' => 'Spoznajte náš výskum',
         'partners' => 'Partneri',
+        'partners_description' => 'Projekt realizujeme vďaka podpore našich partnerov a akademickej spolupráci.'
     ],
     'content' => 'Obsah',
     'web' => 'Web',

@@ -105,6 +105,7 @@ return [
         'subheader' => "Bridging advanced informatics and medicine. For over 5 years, we have been developing data collection systems and machine learning models that help predict health conditions and improve the safety of home care for severely ill patients.",
         'more' => 'Discover Our Research',
         'partners' => 'Partners',
+        'partners_description' => 'This project is made possible through the support of our partners and academic collaboration.'
     ],
     'content' => 'Content',
     'read_more' => 'Read more'

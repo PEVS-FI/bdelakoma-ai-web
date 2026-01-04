@@ -34,6 +34,7 @@
             <div class="wpo-client-item">
                 <div style="margin-bottom: 2rem;">
                     <h2>{{ __('global.home.partners') }}</h2>
+                    <p>{{ __('global.home.partners_description') }}</p>
                 </div>
                 <div class="Gift-carousel owl-carousel">
                     <a href="https://paneurouni.com" target="_blank"><img src="{{ asset('images/partners/pevs.png') }}" lazy alt="Paneurópska vysoká škola"></a>
