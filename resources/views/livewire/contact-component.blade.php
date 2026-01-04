@@ -55,9 +55,11 @@
 
             <script>
                 function handleTurnstileResponse(token) {
+                    // This injects the token into the PHP property $turnstileToken
                     @this.set('turnstileToken', token);
                 }
             </script>
+
         </div>
 
         <div class="submit-area">
