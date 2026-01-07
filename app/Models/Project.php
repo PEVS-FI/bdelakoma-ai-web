@@ -28,6 +28,7 @@ class Project extends Model
         'text_sk',
         'text_en',
         'is_active',
+        'photo',
     ];
 
     public function cacheQuery($query)

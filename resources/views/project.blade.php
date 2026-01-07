@@ -44,7 +44,7 @@
                     <div class="wpo-minimal-wrap">
                         @if($project->photo)
                         <div class="wpo-minimal-img">
-                            <img src="{{ asset('assets/images/project/img-1.jpg') }}" alt="">
+                            <img src="{{ Storage::url($project->photo) }}" alt="{{ $project->{'title_' . locale()} }}">
                         </div>
                         @endif
                     </div>
