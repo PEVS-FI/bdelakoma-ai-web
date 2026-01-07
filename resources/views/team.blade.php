@@ -40,15 +40,13 @@
             <div class="container">
                 @foreach(Cache::get('team_members.all', static fn () => App\Models\TeamMember::query()->orderBy('surname')->orderBy('first_name')->get()) as $member)
                     <div class="row mb-2">
-                        @if($loop->odd)
-                            <div class="col-lg-6 col-md-6">
-                                <div class="about-s2-img">
-                                    @if($member->photo)
-                                        <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->full_name }}">
-                                    @endif
-                                </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="about-s2-img">
+                                @if($member->photo)
+                                    <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->full_name }}">
+                                @endif
                             </div>
-                        @endif
+                        </div>
                         <div class="col-lg-6 col-md-6">
                             <div class="wpo-about-text">
                                 <h2>{{ $member->full_name }}</h2>
@@ -63,15 +61,6 @@
                                 @endif
                             </div>
                         </div>
-                        @if($loop->even)
-                            <div class="col-lg-6 col-md-6">
-                                <div class="about-s2-img">
-                                    @if($member->photo)
-                                        <img src="{{ Storage::url($member->photo) }}" alt="{{ $member->full_name }}">
-                                    @endif
-                                </div>
-                            </div>
-                        @endif
                     </div>
                 @endforeach
             </div>

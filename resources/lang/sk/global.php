@@ -52,6 +52,7 @@ return [
             'plural' => 'Členovia tímu',
             'skill_name' => 'Názov',
             'singular' => 'člena tímu',
+            'order_id' => 'Poradie zobrazenia'
         ],
         'web' => [
             'skills' => 'Špecializácia',

@@ -52,6 +52,7 @@ return [
             'plural' => 'Team Members',
             'skill_name' => 'Name',
             'singular' => 'Team Member',
+            'order_id' => 'Display order'
         ],
         'web' => [
             'skills' => 'Specialization',

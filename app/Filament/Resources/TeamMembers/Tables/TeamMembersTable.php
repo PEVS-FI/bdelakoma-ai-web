@@ -9,6 +9,7 @@ use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\TextInputColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 
@@ -31,6 +32,10 @@ class TeamMembersTable
                     ->visibility('public')
                     ->circular()
                     ->label(__('global.team_members.form.photo')),
+                TextInputColumn::make('order_id')
+                    ->rules(['nullable', 'unique:team_members,order_id', 'integer', 'min:1'])
+                    ->label(__('global.team_members.form.order_id'))
+                    ->type('number'),
             ])
             ->filters([
                 TrashedFilter::make(),

@@ -15,6 +15,7 @@ class TeamMember extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'order_id',
         'title_before',
         'first_name',
         'surname',
@@ -37,7 +38,7 @@ class TeamMember extends Model
     public function fullName(): Attribute
     {
         return Attribute::make(
-            get: fn () => collect([
+            get: fn() => collect([
                 $this->title_before,
                 $this->first_name,
                 $this->surname,
@@ -49,7 +50,7 @@ class TeamMember extends Model
     protected static function booted(): void
     {
         static::addGlobalScope('order', static function (Builder $builder) {
-            $builder->orderBy('surname')->orderBy('first_name');
+            $builder->orderBy('order_id')->orderBy('surname')->orderBy('first_name');
         });
     }
 }
