@@ -48,7 +48,7 @@
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6">
-                            <div class="wpo-about-text">
+                            <div class="wpo-about-text" style="padding-top: 30px !important">
                                 <h2>{{ $member->full_name }}</h2>
                                 <p>{!! $member->{'annotation_' . locale()} !!}</p>
                                 @if(!empty($member->{'skills_' . locale()}))
