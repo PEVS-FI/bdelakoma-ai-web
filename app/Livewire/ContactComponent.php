@@ -73,7 +73,7 @@ class ContactComponent extends Component
         $subject = $this->subject;
         $messageText = 'Meno: ' . $this->name . ' ' . $this->surname . "\n" .
                    'E-mail: ' . $this->email . "\n\n" .
-                   'Správa: ' . $this->message;
+                   "Správa:\n" . $this->message;
 
         Mail::raw($messageText, static function ($message) use ($subject) {
             $message->to('jan.lacko@paneurouni.com')
