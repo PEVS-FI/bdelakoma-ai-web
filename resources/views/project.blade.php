@@ -52,13 +52,13 @@
                         <div class="row">
                             <div class="co-l-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="wpo-project-details-text">
-                                    <span>Kód</span>
+                                    <span>{{ __('global.projects.form.code') }}</span>
                                     <h2>{{ $project->code }}</h2>
                                 </div>
                             </div>
                             <div class="co-l-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="wpo-project-details-text">
-                                    <span>Trvanie</span>
+                                    <span>{{ __('global.projects.form.length') }}</span>
                                     <h2>{{ $project->length_sk }}</h2>
                                 </div>
                             </div>
