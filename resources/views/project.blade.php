@@ -50,13 +50,13 @@
                     </div>
                     <div class="wpo-project-details-list">
                         <div class="row">
-                            <div class="co-l-lg-4 col-md-4 col-sm-6 col-12">
+                            <div class="co-l-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="wpo-project-details-text">
                                     <span>Kód</span>
                                     <h2>{{ $project->code }}</h2>
                                 </div>
                             </div>
-                            <div class="co-l-lg-8 col-md-8 col-sm-12 col-12">
+                            <div class="co-l-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="wpo-project-details-text">
                                     <span>Trvanie</span>
                                     <h2>{{ $project->length_sk }}</h2>
