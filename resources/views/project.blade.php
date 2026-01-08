@@ -59,7 +59,7 @@
                             <div class="co-l-lg-8 col-md-8 col-sm-12 col-12">
                                 <div class="wpo-project-details-text">
                                     <span>Trvanie</span>
-                                    <h2>{{ $project->{'length_' . locale()} }}</h2>
+                                    <h2>{{ $project->length_sk }}</h2>
                                 </div>
                             </div>
                         </div>
