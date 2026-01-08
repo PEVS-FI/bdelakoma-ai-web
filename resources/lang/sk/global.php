@@ -77,6 +77,8 @@ return [
     ],
     'projects' => [
         'form' => [
+            'code' => 'Kód',
+            'length' => 'Trvanie',
             'menu_title_sk' => 'Titul v menu',
             'menu_title_en' => 'Titul v menu (EN)',
             'title_sk' => 'Titul',

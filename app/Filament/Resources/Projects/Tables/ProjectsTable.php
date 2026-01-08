@@ -26,6 +26,10 @@ class ProjectsTable
                     ->visibility('public')
                     ->circular()
                     ->label(__('global.projects.form.photo')),
+                TextColumn::make('code')
+                    ->label(__('global.projects.form.code')),
+                TextColumn::make('length_sk')
+                    ->label(__('global.projects.form.length')),
                 ToggleColumn::make('is_active')
                     ->label(__('global.projects.form.is_active')),
             ])

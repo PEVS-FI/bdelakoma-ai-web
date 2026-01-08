@@ -35,6 +35,12 @@ class ProjectForm
                             ->storeFileNamesIn('photo'),
                         Grid::make(3)
                             ->schema([
+                                TextInput::make('code')
+                                    ->label(__('global.projects.form.code'))
+                                    ->maxLength(254),
+                                TextInput::make('length_sk')
+                                    ->label(__('global.projects.form.length'))
+                                    ->maxLength(254),
                                 Toggle::make('is_active')
                                     ->label(__('global.projects.form.is_active'))
                                     ->required(),
