@@ -104,8 +104,8 @@ return [
         'header' => 'Our Team',
     ],
     'home' => [
-        'header' => 'Artificial Intelligence Supporting Patients in Waking Coma',
-        'subheader' => "Bridging advanced informatics and medicine. For over 5 years, we have been developing data collection systems and machine learning models that help predict health conditions and improve the safety of home care for severely ill patients.",
+        'header' => 'Artificial Intelligence Supporting Patients in Awaking Coma',
+        'subheader' => "We combine advanced informatics and medicine into solutions with a real impact on patients' lives. We explore systems for collecting and analyzing health data in real time through artificial intelligence. We seek solutions to increase the safety and quality of home care for seriously ill patients. We bring more accurate decision-making, timely interventions and greater peace of mind for patients and their loved ones.",
         'more' => 'Discover Our Research',
         'partners' => 'Partners',
         'partners_description' => 'This project is made possible through the support of our partners and academic collaboration.'
