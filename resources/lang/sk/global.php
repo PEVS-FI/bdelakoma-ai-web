@@ -105,7 +105,7 @@ return [
     ],
     'home' => [
         'header' => 'Umelá inteligencia v službách pacientov v bdelej kóme',
-        'subheader' => "Spájame pokročilú informatiku a medicínu. Už viac ako 5 rokov vyvíjame systémy na zber dát a modely strojového učenia, ktoré pomáhajú predikovať zdravotný stav a zvyšujú bezpečnosť domácej starostlivosti o ťažko chorých pacientov.",
+        'subheader' => "Spájame pokročilú informatiku a medicínu do riešení s reálnym dopadom na život pacientov. Skúmame systémy na zber a analýzu zdravotných dát v reálnom čase prostredníctvom umelej inteligencie. Hľadáme riešenia pre zvýšenie bezpečnosti a kvality domácej starostlivosti o ťažko chorých pacientov. Prinášame presnejšie rozhodovanie, včasné zásahy a väčší pokoj pre pacientov aj ich blízkych.",
         'more' => 'Spoznajte náš výskum',
         'partners' => 'Partneri',
         'partners_description' => 'Projekt realizujeme vďaka podpore našich partnerov a akademickej spolupráci.'
